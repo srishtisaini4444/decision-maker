@@ -33,3 +33,31 @@ addOptionBtn.addEventListener("click", () => {
     attachRemoveFunction(optionRow.querySelector(".remove-btn"));
 
 });
+
+const decideBtn = document.getElementById("decide-btn");
+const result = document.getElementById("result");
+
+decideBtn.addEventListener("click", () => {
+
+    const optionInputs = document.querySelectorAll(".option-input");
+
+    const options = [];
+
+    optionInputs.forEach(input => {
+        const value = input.value.trim();
+
+        if (value !== "") {
+            options.push(value);
+        }
+    });
+
+    if (options.length === 0) {
+        result.textContent = "Please enter at least one option!";
+        return;
+    }
+
+    const randomIndex = Math.floor(Math.random() * options.length);
+
+    result.textContent = options[randomIndex];
+
+});
