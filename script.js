@@ -55,14 +55,30 @@ decideBtn.addEventListener("click", () => {
         const value = input.value.trim();
 
         if (value !== "") {
-            options.push(value);
+            
+            if (!options.includes(value)) {
+    if (!options.includes(value)) {
+    options.push(value);
+    }
+
+    }
+
         }
     });
 
     if (options.length === 0) {
-        result.textContent = "Please enter at least one option!";
-        return;
-    }
+    result.textContent = "⚠ Please enter at least one option!";
+    decideBtn.disabled = false;
+    decideBtn.textContent = "🎡 Decide";
+    return;
+}
+
+if (options.length < 2) {
+    result.textContent = "⚠ Please enter at least two options!";
+    decideBtn.disabled = false;
+    decideBtn.textContent = "🎡 Decide";
+    return;
+}
 
     const randomIndex = Math.floor(Math.random() * options.length);
 
