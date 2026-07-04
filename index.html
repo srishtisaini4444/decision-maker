@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Maker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>🎯 Decision Maker</h1>
+            <p>Can't decide? Let fate choose for you!</p>
+        </header>
+
+        <main>
+
+            <!-- Question Section -->
+            <section class="question-section">
+                <label for="question">Question</label>
+                <input
+                    type="text"
+                    id="question"
+                    placeholder="e.g. What should I eat today?"
+                >
+            </section>
+
+            <!-- Options Section -->
+            <section class="options-section">
+
+                <h2>Options</h2>
+
+                <div id="options-container">
+
+                    <input
+                        type="text"
+                        class="option-input"
+                        placeholder="Enter an option"
+                    >
+
+                </div>
+
+                <button id="add-option-btn">
+                    + Add Option
+                </button>
+
+            </section>
+
+            <!-- Decide Button -->
+            <section class="decision-section">
+
+                <button id="decide-btn">
+                    🎡 Decide
+                </button>
+
+            </section>
+
+            <!-- Result -->
+            <section class="result-section">
+
+                <h2>Winner</h2>
+
+                <p id="result">
+                    No decision yet.
+                </p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
