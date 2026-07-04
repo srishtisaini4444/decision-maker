@@ -86,3 +86,23 @@ button:hover {
     font-weight: bold;
     color: #4f46e5;
 }
+
+.option-row{
+    display:flex;
+    gap:10px;
+    margin-bottom:12px;
+}
+
+.option-row input{
+    flex:1;
+    margin-bottom:0;
+}
+
+.remove-btn{
+    width:50px;
+    background:#ef4444;
+}
+
+.remove-btn:hover{
+    background:#dc2626;
+}

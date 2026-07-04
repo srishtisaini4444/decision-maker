@@ -1,14 +1,35 @@
 const addOptionBtn = document.getElementById("add-option-btn");
 const optionsContainer = document.getElementById("options-container");
 
+
+function attachRemoveFunction(button) {
+    button.addEventListener("click", () => {
+
+        if (optionsContainer.children.length > 1) {
+            button.parentElement.remove();
+        }
+
+    });
+}
+
+attachRemoveFunction(document.querySelector(".remove-btn"));
+
 addOptionBtn.addEventListener("click", () => {
 
-    const input = document.createElement("input");
+    const optionRow = document.createElement("div");
+    optionRow.className = "option-row";
 
-    input.type = "text";
-    input.className = "option-input";
-    input.placeholder = "Enter an option";
+    optionRow.innerHTML = `
+        <input
+            type="text"
+            class="option-input"
+            placeholder="Enter an option">
 
-    optionsContainer.appendChild(input);
+        <button class="remove-btn">✖</button>
+    `;
+
+    optionsContainer.appendChild(optionRow);
+
+    attachRemoveFunction(optionRow.querySelector(".remove-btn"));
 
 });
