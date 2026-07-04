@@ -1,5 +1,7 @@
 const addOptionBtn = document.getElementById("add-option-btn");
 const optionsContainer = document.getElementById("options-container");
+const winnerEmoji = document.getElementById("winner-emoji");
+const winnerMessage = document.getElementById("winner-message");
 
 
 function attachRemoveFunction(button) {
@@ -116,7 +118,19 @@ const shuffle = setInterval(() => {
 
         clearInterval(shuffle);
 
-        result.textContent = options[randomIndex];
+        const winner = options[randomIndex];
+
+result.textContent = winner.toUpperCase();
+
+winnerEmoji.textContent = "🎉";
+
+winnerMessage.textContent = "Congratulations! Great choice! 💖";
+
+result.classList.remove("pop");
+
+void result.offsetWidth;
+
+result.classList.add("pop");
 
         decideBtn.disabled = false;
         decideBtn.textContent = "🎡 Decide";

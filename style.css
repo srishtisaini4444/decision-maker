@@ -195,3 +195,77 @@ button:disabled {
     }
 
 }
+
+.winner-card{
+
+    margin-top:20px;
+
+    background:linear-gradient(
+        135deg,
+        #fff8fc,
+        #ffe8f4
+    );
+
+    border:2px solid #ffd0e5;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(255,105,180,.15);
+
+}
+
+#winner-emoji{
+
+    font-size:55px;
+
+    margin-bottom:12px;
+
+}
+
+#winner-message{
+
+    display:block;
+
+    margin-top:10px;
+
+    color:#9c7a8d;
+
+    font-size:15px;
+
+}
+
+.pop{
+
+    animation:pop .5s ease;
+
+}
+
+@keyframes pop{
+
+    0%{
+
+        transform:scale(.6);
+
+        opacity:0;
+
+    }
+
+    60%{
+
+        transform:scale(1.15);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
