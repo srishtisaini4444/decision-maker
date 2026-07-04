@@ -106,3 +106,8 @@ button:hover {
 .remove-btn:hover{
     background:#dc2626;
 }
+
+button:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}

@@ -39,6 +39,9 @@ const result = document.getElementById("result");
 
 decideBtn.addEventListener("click", () => {
 
+    decideBtn.disabled = true;
+    decideBtn.textContent = "Choosing...";
+
     const optionInputs = document.querySelectorAll(".option-input");
 
     const options = [];
@@ -73,6 +76,9 @@ const shuffle = setInterval(() => {
         clearInterval(shuffle);
 
         result.textContent = options[randomIndex];
+
+        decideBtn.disabled = false;
+        decideBtn.textContent = "🎡 Decide";
 
          }
 
