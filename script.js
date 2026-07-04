@@ -49,6 +49,10 @@ decideBtn.addEventListener("click", () => {
 
     const optionInputs = document.querySelectorAll(".option-input");
 
+    optionInputs.forEach(input => {
+    input.classList.remove("duplicate");
+    });
+
     const options = [];
 
     optionInputs.forEach(input => {
@@ -59,9 +63,23 @@ decideBtn.addEventListener("click", () => {
     }
 });
 
-    const uniqueOptions = [...new Set(options)];
+    const seen = new Set();
+let hasDuplicate = false;
 
-if (uniqueOptions.length !== options.length) {
+optionInputs.forEach(input => {
+    const value = input.value.trim();
+
+    if (value === "") return;
+
+    if (seen.has(value)) {
+        input.classList.add("duplicate");
+        hasDuplicate = true;
+    } else {
+        seen.add(value);
+    }
+});
+
+if (hasDuplicate) {
     result.textContent = "⚠ Duplicate options are not allowed!";
     decideBtn.disabled = false;
     decideBtn.textContent = "🎡 Decide";
