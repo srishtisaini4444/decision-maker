@@ -3,6 +3,7 @@ const optionsContainer = document.getElementById("options-container");
 const winnerEmoji = document.getElementById("winner-emoji");
 const winnerMessage = document.getElementById("winner-message");
 const winnerCard = document.querySelector(".winner-card");
+const resetBtn = document.getElementById("reset-btn");
 
 function attachRemoveFunction(button) {
     button.addEventListener("click", () => {
@@ -192,3 +193,35 @@ function attachEnterKey(input) {
     });
 
 }
+
+resetBtn.addEventListener("click", () => {
+
+    document.getElementById("question").value = "";
+
+    const rows = document.querySelectorAll(".option-row");
+
+    rows.forEach((row, index) => {
+
+        if(index !== 0){
+
+            row.remove();
+
+        }
+
+    });
+
+    document.querySelector(".option-input").value = "";
+
+    document.querySelectorAll(".option-input").forEach(input=>{
+
+        input.classList.remove("duplicate");
+
+    });
+
+    result.textContent = "No decision yet";
+
+    winnerEmoji.textContent = "🎀";
+
+    winnerMessage.textContent = "Your lucky choice will appear here!";
+
+});

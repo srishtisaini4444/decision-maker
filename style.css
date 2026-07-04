@@ -419,3 +419,27 @@ body::after{
     }
 
 }
+
+.button-group{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+#reset-btn{
+
+    background:linear-gradient(
+        135deg,
+        #ffc1dc,
+        #ff9ec8
+    );
+
+}
+
+#reset-btn:hover{
+
+    box-shadow:0 10px 20px rgba(255,160,200,.35);
+
+}
