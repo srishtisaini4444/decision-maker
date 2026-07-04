@@ -52,19 +52,21 @@ decideBtn.addEventListener("click", () => {
     const options = [];
 
     optionInputs.forEach(input => {
-        const value = input.value.trim();
+    const value = input.value.trim();
 
-        if (value !== "") {
-            
-            if (!options.includes(value)) {
-    if (!options.includes(value)) {
-    options.push(value);
+    if (value !== "") {
+        options.push(value);
     }
+});
 
-    }
+    const uniqueOptions = [...new Set(options)];
 
-        }
-    });
+if (uniqueOptions.length !== options.length) {
+    result.textContent = "⚠ Duplicate options are not allowed!";
+    decideBtn.disabled = false;
+    decideBtn.textContent = "🎡 Decide";
+    return;
+}
 
     if (options.length === 0) {
     result.textContent = "⚠ Please enter at least one option!";
