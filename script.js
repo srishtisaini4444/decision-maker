@@ -14,6 +14,9 @@ function attachRemoveFunction(button) {
 
 attachRemoveFunction(document.querySelector(".remove-btn"));
 
+attachEnterKey(document.querySelector(".option-input"));
+
+
 addOptionBtn.addEventListener("click", () => {
 
     const optionRow = document.createElement("div");
@@ -31,6 +34,8 @@ addOptionBtn.addEventListener("click", () => {
     optionsContainer.appendChild(optionRow);
 
     attachRemoveFunction(optionRow.querySelector(".remove-btn"));
+
+    attachEnterKey(optionRow.querySelector(".option-input"));
 
 });
 
@@ -85,3 +90,23 @@ const shuffle = setInterval(() => {
     }, 100);
 
 });
+
+function attachEnterKey(input) {
+
+    input.addEventListener("keydown", function (e) {
+
+        if (e.key === "Enter") {
+
+            e.preventDefault();
+
+            addOptionBtn.click();
+
+            const inputs = document.querySelectorAll(".option-input");
+
+            inputs[inputs.length - 1].focus();
+
+        }
+
+    });
+
+}
