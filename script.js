@@ -58,6 +58,24 @@ decideBtn.addEventListener("click", () => {
 
     const randomIndex = Math.floor(Math.random() * options.length);
 
-    result.textContent = options[randomIndex];
+    let count = 0;
+
+const shuffle = setInterval(() => {
+
+    const randomOption = options[Math.floor(Math.random() * options.length)];
+
+    result.textContent = randomOption;
+
+    count++;
+
+    if (count >= 20) {
+
+        clearInterval(shuffle);
+
+        result.textContent = options[randomIndex];
+
+         }
+
+    }, 100);
 
 });
