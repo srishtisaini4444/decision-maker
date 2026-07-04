@@ -2,7 +2,7 @@ const addOptionBtn = document.getElementById("add-option-btn");
 const optionsContainer = document.getElementById("options-container");
 const winnerEmoji = document.getElementById("winner-emoji");
 const winnerMessage = document.getElementById("winner-message");
-
+const winnerCard = document.querySelector(".winner-card");
 
 function attachRemoveFunction(button) {
     button.addEventListener("click", () => {
@@ -125,6 +125,38 @@ result.textContent = winner.toUpperCase();
 winnerEmoji.textContent = "🎉";
 
 winnerMessage.textContent = "Congratulations! Great choice! 💖";
+
+confetti({
+    particleCount: 80,
+    angle: 60,
+    spread: 70,
+    origin: { x: 0 },
+    colors: [
+        "#ff4f9a",
+        "#ff84c1",
+        "#ffd6ea",
+        "#ffffff"
+    ]
+});
+
+confetti({
+    particleCount: 80,
+    angle: 120,
+    spread: 70,
+    origin: { x: 1 },
+    colors: [
+        "#ff4f9a",
+        "#ff84c1",
+        "#ffd6ea",
+        "#ffffff"
+    ]
+});
+
+winnerCard.classList.remove("pop");
+
+void winnerCard.offsetWidth;
+
+winnerCard.classList.add("pop");
 
 result.classList.remove("pop");
 
