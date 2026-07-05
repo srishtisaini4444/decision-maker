@@ -129,11 +129,13 @@ button:not(:disabled):hover{
 }
 
 #result{
+
     text-align:center;
-    font-size:34px;
-    font-weight:800;
+    font-size:38px;
+    letter-spacing:2px;
+    text-transform:uppercase;
     color:#ff4f9a;
-    margin-top:20px;
+
 }
 
 .option-row{
@@ -442,4 +444,31 @@ body::after{
 
     box-shadow:0 10px 20px rgba(255,160,200,.35);
 
+}
+
+.winner-glow{
+    animation: winnerGlow 1.2s ease;
+}
+
+@keyframes winnerGlow{
+
+    0%{
+        transform: scale(0.95);
+        box-shadow: 0 0 0 rgba(255,105,180,0);
+    }
+
+    40%{
+        transform: scale(1.05);
+        box-shadow: 0 0 40px rgba(255,105,180,.45);
+    }
+
+    100%{
+        transform: scale(1);
+        box-shadow: 0 12px 30px rgba(255,105,180,.18);
+    }
+
+}
+
+button:active{
+    transform: scale(.97);
 }

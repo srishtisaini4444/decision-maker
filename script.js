@@ -153,11 +153,12 @@ confetti({
     ]
 });
 
-winnerCard.classList.remove("pop");
+winnerCard.classList.remove("pop", "winner-glow");
 
 void winnerCard.offsetWidth;
 
 winnerCard.classList.add("pop");
+winnerCard.classList.add("winner-glow");
 
 result.classList.remove("pop");
 
